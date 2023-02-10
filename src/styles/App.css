@@ -1,0 +1,16 @@
+body{
+    background-color: #e7e7e7;
+    overflow: hidden;
+}
+
+.logo{
+    /* display: block;
+    margin: 0 auto; */
+    padding-top: 20px;
+    text-align: center;
+}
+
+.container{
+    text-align: center;
+}
+

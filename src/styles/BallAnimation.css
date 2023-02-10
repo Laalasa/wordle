@@ -1,0 +1,112 @@
+@keyframes fall{
+    0%{background: none !important}
+    /* 70%{transform: translateY(700px)} */
+    100%{transform: translateY(103vh);}
+}
+
+.ball{
+    background: url("./../imgs/ball.png");
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    position: absolute;
+    animation: fall 2s cubic-bezier(0.51, 0.57, 0.61, 1.19);
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.lb1{
+    position: absolute;
+    top: -100px;
+    left: -30px;
+    z-index: 6;
+}
+
+.lb2{
+    position: absolute;
+    animation-delay: 2s;
+    top: -160px;
+    left: -20px;
+    z-index: 2;
+}
+
+.lb3{
+    position: absolute;
+    animation-delay: 4s;
+    left: -45px;
+    top: -220px;
+    z-index: 1;
+}
+ 
+.lb4{
+    position: absolute;
+    z-index: 3;
+    animation-delay: 6s;
+    left: 30px;
+    top: -120px;
+}
+
+.lb5{
+    position: absolute;
+    animation-delay: 10s;
+    left: 50px;
+    top: -170px;
+    z-index: 4;
+}
+ 
+.lb6{
+    position: absolute;
+    z-index: 5;
+    animation-delay: 8s;
+    left: 120px;
+    top: -110px;
+}
+
+.rb1{
+    animation-delay: 1s;
+    position: absolute;
+    top: -100px;
+    right: -30px;
+    z-index: 6;
+}
+
+.rb2{
+    position: absolute;
+    animation-delay: 3s;
+    top: -160px;
+    right: -20px;
+    z-index: 2;
+}
+
+.rb3{
+    position: absolute;
+    animation-delay: 5s;
+    right: -45px;
+    top: -220px;
+    z-index: 1;
+}
+ 
+.rb4{
+    position: absolute;
+    z-index: 3;
+    animation-delay: 7s;
+    right: 30px;
+    top: -120px;
+}
+
+.rb5{
+    position: absolute;
+    animation-delay: 11s;
+    right: 50px;
+    top: -170px;
+    z-index: 4;
+}
+ 
+.rb6{
+    position: absolute;
+    z-index: 5;
+    animation-delay: 9s;
+    right: 120px;
+    top: -110px;
+}
