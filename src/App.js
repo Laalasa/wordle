@@ -1,31 +1,39 @@
-import wordle from "./imgs/logo.png";
 import "./styles/App.css"
-import BallAnimation from "./BallsAnimation";
 import { useEffect, useState } from "react";
-import Wordle from "./components/Wordle"
+import Preloader from "./components/Preloader"
+import Content from "./components/Content";
 
 function App() {
   const [solution, setSolution] = useState("");
-
+  const [solutionsFetched, setSolutionsFetched] = useState (false);
+  const [lettersFetched, setLettersFetched] = useState (false);
   useEffect(() => {
     fetch('https://wordle-api-f3ik.onrender.com/solutions')
       .then(res => res.json())
       .then(json => {
         let randomWord = json[Math.floor(Math.random() * json.length)]
         setSolution(randomWord.words.toLowerCase())
+        setSolutionsFetched(true);
       })
   }, [])
 
+  const [letters, setLetters] = useState(null);
+  useEffect(() => {
+  
+      fetch('https://wordle-api-f3ik.onrender.com/letters')
+      .then(res => res.json())
+      .then(json => {
+          setLetters(json)
+          setLettersFetched(true);
+      })
+  },[])
+
 
   return (
-    <div className="App">
-      <div className="logo">
-        <a href="/"><img src={wordle} width="180px" alt="" /></a>
-        </div>
-      <div className="container">
-        {<Wordle solution={solution}/>}
-      </div>
-      <BallAnimation />
+    <div>
+      {(!lettersFetched || !solutionsFetched) && <Preloader/>}
+      {lettersFetched && solutionsFetched && <Content solution={solution} letters={letters} />}
+
     </div>
   );
 }
