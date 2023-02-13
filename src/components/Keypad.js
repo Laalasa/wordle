@@ -4,7 +4,7 @@ import '../styles/Keypad.css';
 export default function Keypad({usedKeys}) {
     const [letters, setLetters] = useState(null);
     useEffect(() => {
-        fetch('http://localhost:3001/letters')
+        fetch('https://wordle-api-f3ik.onrender.com/letters')
         .then(res => res.json())
         .then(json => {
             setLetters(json)

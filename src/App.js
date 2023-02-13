@@ -8,7 +8,7 @@ function App() {
   const [solution, setSolution] = useState("");
 
   useEffect(() => {
-    fetch('http://localhost:3001/solutions')
+    fetch('https://wordle-api-f3ik.onrender.com/solutions')
       .then(res => res.json())
       .then(json => {
         let randomWord = json[Math.floor(Math.random() * json.length)]
